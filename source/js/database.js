@@ -31,6 +31,23 @@ class Match {
     }
 };
 
+class GroupStageMatch extends Match {
+    constructor(team1, team2, date, hour){
+        super(team1, team2, date, hour);
+        if(date < 19 || (date === 19 && hour === 2)){
+            this._stage = 1;
+        }
+        else if(date <= 23){
+            this._stage = 2;
+        }
+        else{
+            this._stage = 3;
+        }
+    }
+    get stage(){
+        return this._stage;
+    }
+}
 const germany = new Team("Germany");
 const scotland = new Team("Scotland");
 const hungary = new Team("Hungary");
@@ -56,44 +73,52 @@ const gruzia = new Team("Gruzia");
 const portugese = new Team("Portugese");
 const czech = new Team("Czech");
 
-const matchArray = new Array();
-matchArray.push(new Match(germany, scotland, '15-06', '02:00'));
-matchArray.push(new Match(hungary, switerland, '15-06', '20:00'));
-matchArray.push(new Match(spain, croatia, '15-06', '23:00'));
-matchArray.push(new Match(italia, albania, '16-06', '02:00'));
-matchArray.push(new Match(poland, netherland, '16-06', '20:00'));
-matchArray.push(new Match(slovenia, denmark, '16-06', '23:00'));
-matchArray.push(new Match(serbia, england, '16-06', '02:00'));
-matchArray.push(new Match(romania, ukraina, '17-06', '20:00'));
-matchArray.push(new Match(belgium, slovakia, '17-06', '23:00'));
-matchArray.push(new Match(austria, french, '18-06', '02:00'));
-matchArray.push(new Match(turkey, gruzia, '18-06', '23:00'));
-matchArray.push(new Match(portugese, czech, '19-06', '02:00'));
+const matchArrayGroupStage = new Array();
+matchArrayGroupStage.push(new GroupStageMatch(germany, scotland, 15, 2));
+matchArrayGroupStage.push(new GroupStageMatch(hungary, switerland, 15, 20));
+matchArrayGroupStage.push(new GroupStageMatch(spain, croatia, 15, 23));
+matchArrayGroupStage.push(new GroupStageMatch(italia, albania, 16, 2));
+matchArrayGroupStage.push(new GroupStageMatch(poland, netherland, 16, 20));
+matchArrayGroupStage.push(new GroupStageMatch(slovenia, denmark, 16, 23));
+matchArrayGroupStage.push(new GroupStageMatch(serbia, england, 16, 2));
+matchArrayGroupStage.push(new GroupStageMatch(romania, ukraina, 17, 20));
+matchArrayGroupStage.push(new GroupStageMatch(belgium, slovakia, 17, 23));
+matchArrayGroupStage.push(new GroupStageMatch(austria, french, 18, 2));
+matchArrayGroupStage.push(new GroupStageMatch(turkey, gruzia, 18, 23));
+matchArrayGroupStage.push(new GroupStageMatch(portugese, czech, 19, 2));
 
-matchArray.push(new Match(croatia, albania, '19-06', '20:00'));
-matchArray.push(new Match(germany, hungary, '19-06', '23:00'));
-matchArray.push(new Match(scotland, switerland, '20-06', '02:00'));
-matchArray.push(new Match(slovenia, serbia, '20-06', '20:00'));
-matchArray.push(new Match(denmark, england, '20-06', '23:00'));
-matchArray.push(new Match(spain, italia, '21-06', '02:00'));
-matchArray.push(new Match(slovakia, ukraina, '21-06', '20:00'));
-matchArray.push(new Match(poland, austria, '21-06', '23:00'));
-matchArray.push(new Match(netherland, french, '22-06', '02:00'));
-matchArray.push(new Match(gruzia, czech, '22-06', '20:00'));
-matchArray.push(new Match(turkey, portugese, '22-06', '23:00'));
-matchArray.push(new Match(belgium, romania, '23-06', '02:00'));
+matchArrayGroupStage.push(new GroupStageMatch(croatia, albania, 19, 20));
+matchArrayGroupStage.push(new GroupStageMatch(germany, hungary, 19, 23));
+matchArrayGroupStage.push(new GroupStageMatch(scotland, switerland, 20, 2));
+matchArrayGroupStage.push(new GroupStageMatch(slovenia, serbia, 20, 20));
+matchArrayGroupStage.push(new GroupStageMatch(denmark, england, 20, 23));
+matchArrayGroupStage.push(new GroupStageMatch(spain, italia, 21, 2));
+matchArrayGroupStage.push(new GroupStageMatch(slovakia, ukraina, 21, 20));
+matchArrayGroupStage.push(new GroupStageMatch(poland, austria, 21, 23));
+matchArrayGroupStage.push(new GroupStageMatch(netherland, french, 22, 2));
+matchArrayGroupStage.push(new GroupStageMatch(gruzia, czech, 22, 20));
+matchArrayGroupStage.push(new GroupStageMatch(turkey, portugese, 22, 23));
+matchArrayGroupStage.push(new GroupStageMatch(belgium, romania, 23, 2));
 
-matchArray.push(new Match(switerland, germany, '24-06', '02:00'));
-matchArray.push(new Match(scotland, hungary, '24-06', '02:00'));
-matchArray.push(new Match(albania, spain, '25-06', '02:00'));
-matchArray.push(new Match(croatia, italia, '25-06', '02:00'));
-matchArray.push(new Match(french, poland, '25-06', '23:00'));
-matchArray.push(new Match(netherland, austria, '25-06', '23:00'));
-matchArray.push(new Match(denmark, serbia, '26-06', '02:00'));
-matchArray.push(new Match(england, slovenia, '26-06', '02:00'));
-matchArray.push(new Match(germany, scotland, '26-06', '02:00'));
-matchArray.push(new Match(slovakia, romania, '26-06', '23:00'));
-matchArray.push(new Match(ukraina, belgium, '26-06', '23:00'));
-matchArray.push(new Match(gruzia, portugese, '27-06', '02:00'));
-matchArray.push(new Match(czech, turkey, '277-06', '02:00'));
+matchArrayGroupStage.push(new GroupStageMatch(switerland, germany, 24, 2));
+matchArrayGroupStage.push(new GroupStageMatch(scotland, hungary, 24, 2));
+matchArrayGroupStage.push(new GroupStageMatch(albania, spain, 25, 2));
+matchArrayGroupStage.push(new GroupStageMatch(croatia, italia, 25, 2));
+matchArrayGroupStage.push(new GroupStageMatch(french, poland, 25, 23));
+matchArrayGroupStage.push(new GroupStageMatch(netherland, austria, 25, 23));
+matchArrayGroupStage.push(new GroupStageMatch(denmark, serbia, 26, 2));
+matchArrayGroupStage.push(new GroupStageMatch(england, slovenia, 26, 2));
+matchArrayGroupStage.push(new GroupStageMatch(slovakia, romania, 26, 23));
+matchArrayGroupStage.push(new GroupStageMatch(ukraina, belgium, 26, 23));
+matchArrayGroupStage.push(new GroupStageMatch(gruzia, portugese, 27, 2));
+matchArrayGroupStage.push(new GroupStageMatch(czech, turkey, 27, 2));
 
+
+const resources = {
+    Team,
+    Match,
+    GroupStageMatch,
+    matchArrayGroupStage,
+};
+
+export {Team, Match, GroupStageMatch, matchArrayGroupStage};
