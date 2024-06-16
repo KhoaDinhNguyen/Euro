@@ -4,55 +4,63 @@
         <title>Euro group stage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./source/css/style.css" rel="stylesheet">
         <script type="module" src="./source/js/createDOM.js" defer></script>
     </head>
     <body>
         <header>
-            <nav>
-                <ul>
-                    <li><p>Group stage</p></li>
-                    <li><p>Elimination stage</p></li>
-                </ul>
-            </nav>
-            <div id="filter">
-                <input type="number" name="filterDate" id="filterDate">
-                <button id="submitFilter">Filter</button>
+            <div id="title">
+                <p>TTTBOC</p>
+                <nav>
+                    <ul>
+                        <li><p>Group stage</p></li>
+                        <li><p>Elimination stage</p></li>
+                    </ul>
+                </nav>
             </div>
-            <div id="search">
-                <select name="searchValue" id="searchValue">
-                    <option value="All">All</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Czech">Czech</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="England">England</option>
-                    <option value="French">French</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Gruzia">Gruzia</option>
-                    <option value="Hungary">Hungary</option>
-                    <option value="Italia">Italia</option>
-                    <option value="Netherland">Netherland</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugese">Portugese</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Scotland">Scotland</option>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Slovakia">Slovakia</option>
-                    <option value="Slovenia">Slovenia</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Switerland">Switerland</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="Ukraina">Ukraina</option>
-                </select>
-                <button id="submitSearch">Search</button>
-            </div>
-            <div id="groupBy">
-                <ul>
-                    <li><a href="">By team</a></li>
-                    <li><a href="">By group</a></li>
-                </ul>
+            <div id="help">
+                <div id="groupBy">
+                    <ul>
+                        <li><a href="">By team</a></li>
+                        <li><a href="">By group</a></li>
+                    </ul>
+                </div>
+                <div id="tool">
+                    <div id="filter">
+                        <input type="number" name="filterDate" id="filterDate">
+                        <button id="submitFilter">Filter</button>
+                    </div>
+                    <div id="search">
+                        <select name="searchValue" id="searchValue">
+                            <option value="All">All</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Croatia">Croatia</option>
+                            <option value="Czech">Czech</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="England">England</option>
+                            <option value="French">French</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Gruzia">Gruzia</option>
+                            <option value="Hungary">Hungary</option>
+                            <option value="Italia">Italia</option>
+                            <option value="Netherland">Netherland</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Portugese">Portugese</option>
+                            <option value="Romania">Romania</option>
+                            <option value="Scotland">Scotland</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Slovakia">Slovakia</option>
+                            <option value="Slovenia">Slovenia</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Switerland">Switerland</option>
+                            <option value="Turkey">Turkey</option>
+                            <option value="Ukraina">Ukraina</option>
+                        </select>
+                        <button id="submitSearch">Search</button>
+                    </div>
+                </div>
             </div>
         </header>
         <main>

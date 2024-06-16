@@ -94,7 +94,7 @@ matchArrayGroupStage.push(new GroupStageMatch(spain, croatia, 15, 23));
 matchArrayGroupStage.push(new GroupStageMatch(italia, albania, 16, 2));
 matchArrayGroupStage.push(new GroupStageMatch(poland, netherland, 16, 20));
 matchArrayGroupStage.push(new GroupStageMatch(slovenia, denmark, 16, 23));
-matchArrayGroupStage.push(new GroupStageMatch(serbia, england, 16, 2));
+matchArrayGroupStage.push(new GroupStageMatch(serbia, england, 17, 2));
 matchArrayGroupStage.push(new GroupStageMatch(romania, ukraina, 17, 20));
 matchArrayGroupStage.push(new GroupStageMatch(belgium, slovakia, 17, 23));
 matchArrayGroupStage.push(new GroupStageMatch(austria, french, 18, 2));

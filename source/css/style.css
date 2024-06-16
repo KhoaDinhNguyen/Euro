@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+#title, #help {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+#filter, #search {
+    display: inline-block;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 5px;
+    margin-top: 10px;
+    width: 300px;
+}
+
+td, th{
+    border: black solid 1px;
+    padding: 5px;
+}
+
+td:nth-child(1), td:nth-child(4){
+    width: 75px;    
+}
+
+td:nth-child(2), td:nth-child(3){
+    width: 25px;
+}
+
+table td:nth-child(5){
+    width: 25px;
+}

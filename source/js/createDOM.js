@@ -11,9 +11,9 @@ function createDOMFromMatch(match){
     }
 
     td[0].innerHTML = `<p>${match.team1.name}<p>`;
-    td[1].innerHTML = `<p>${match.team2.name}<p>`;
+    td[1].innerHTML = `<p><p>`;
     td[2].innerHTML = `<p><p>`;
-    td[3].innerHTML = `<p><p>`;
+    td[3].innerHTML = `<p>${match.team2.name}<p>`;
 
     if(match.hour === 2){
         td[4].innerHTML = `<p>0${match.hour}:00<p>`
@@ -38,7 +38,7 @@ function createDOMFromMatchGroup(matches){
     const tr = document.createElement('tr')
     const th = document.createElement('th');
 
-    th.innerHTML = `<p>${matches[0].date}-06-2004<p>`
+    th.innerHTML = `<p>${matches[0].date}-06-2024<p>`
     th.setAttribute("colspan","5");
 
     tr.appendChild(th);
