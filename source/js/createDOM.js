@@ -2,8 +2,6 @@ import {Team, Match, GroupStageMatch, matchArrayGroupStage} from "./database.js"
 
 const sectionMain = document.getElementById("matches");
 
-console.log(matchArrayGroupStage[0].team1.name);
-
 function createDOMFromMatch(match){
     const tr = document.createElement('tr');
     const td = new Array(5);
@@ -57,7 +55,11 @@ function createDOMFromMatchGroup(matches){
     sectionMain.appendChild(div);
 }
 
-function createDOMForMatchArray(matchArray){
+function createDOMFormMatchArray(matchArray){
+    if(matchArray.length === 0){
+        return true;
+    }
+
     let matchesGroup = [], date = matchArray[0].date;
 
     for(let i = 0 ; i < matchArray.length; ++i){
@@ -70,8 +72,60 @@ function createDOMForMatchArray(matchArray){
             matchesGroup.push(matchArray[i]);
         }
     }
+
+    if(matchesGroup.length === 0){
+        return true;
+    }
     createDOMFromMatchGroup(matchesGroup);
 
 }
 
-createDOMForMatchArray(matchArrayGroupStage);
+createDOMFormMatchArray(matchArrayGroupStage);
+
+
+/*---------------------------------INTERACTION----------------------*/
+
+//FILTER
+const filter = document.getElementById("submitFilter");
+
+function getFilter(){
+    sectionMain.innerHTML = '';
+    const value = document.getElementById("filterDate").value;
+
+    if(value === ''){
+        createDOMFormMatchArray(matchArrayGroupStage);
+        return true;
+    }
+
+    const matchArray = matchArrayGroupStage.filter(item => {
+        return item.date >= value;
+    });
+
+    createDOMFormMatchArray(matchArray);
+    return true;
+}
+
+filter.addEventListener("click", getFilter);
+
+//SEARCH
+const search = document.getElementById("submitSearch");
+
+function getSearch(){
+    sectionMain.innerHTML = '';
+    const value = document.getElementById("searchValue").value;
+
+    if(value === "All"){
+        createDOMFormMatchArray(matchArrayGroupStage);
+        return true;
+    }
+
+    const matchArray = matchArrayGroupStage.filter(item => {
+        return item.team1.name === value || item.team2.name === value;
+    });
+
+    createDOMFormMatchArray(matchArray);
+
+    return true;
+}
+
+search.addEventListener("click", getSearch);

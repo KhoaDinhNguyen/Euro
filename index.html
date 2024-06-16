@@ -4,7 +4,7 @@
         <title>Euro group stage</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="module" src="./source/js/groupStageByTeam.js" defer></script>
+        <script type="module" src="./source/js/createDOM.js" defer></script>
     </head>
     <body>
         <header>
@@ -15,16 +15,38 @@
                 </ul>
             </nav>
             <div id="filter">
-                <form>
-                    <input type="date" name="filterDate" id="filterDate">
-                    <input type="submit" value="Filter">
-                </form>
+                <input type="number" name="filterDate" id="filterDate">
+                <button id="submitFilter">Filter</button>
             </div>
             <div id="search">
-                <form>
-                    <input type="text" name="searchValue" id="searchValue">
-                    <input type="submit" value="Search">
-                </form>
+                <select name="searchValue" id="searchValue">
+                    <option value="All">All</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Czech">Czech</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="England">England</option>
+                    <option value="French">French</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Gruzia">Gruzia</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Netherland">Netherland</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugese">Portugese</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Scotland">Scotland</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="Slovenia">Slovenia</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Switerland">Switerland</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Ukraina">Ukraina</option>
+                </select>
+                <button id="submitSearch">Search</button>
             </div>
             <div id="groupBy">
                 <ul>

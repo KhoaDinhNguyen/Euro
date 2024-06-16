@@ -16,6 +16,8 @@ class Match {
         this._team2 = team2;
         this._date = date;
         this._hour = hour;
+        this._team1Score  = '';
+        this._team2Score  = '';
     }
     get team1(){
         return this._team1;
@@ -28,6 +30,18 @@ class Match {
     }
     get hour(){
         return this._hour;
+    }
+    get team1Score(){
+        return this._team1Score;
+    }
+    get team2Score(){
+        return this._team2Score;
+    }
+    set team1Score(score){
+        this._team1Score = score;
+    }
+    set team2Score(score){
+        this._team2Score = score;
     }
 };
 
