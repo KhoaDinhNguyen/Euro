@@ -11,6 +11,17 @@ li {
     display: inline-block;
 }
 
+header {
+    background-color: #fcb5009c;
+    color: azure;
+    cursor: default;
+}
+
+#title{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
 #title, #help {
     display: flex;
     justify-content: space-between;
@@ -21,21 +32,65 @@ li {
     display: inline-block;
 }
 
+#title li{
+    padding: 5px;
+    box-sizing: border-box;
+    border: 3px solid #FCB300;
+    background-color: #FCB300;
+
+}
+
+#title li:hover {
+    background-color: white;
+    color:black;
+    border: 3px solid #e93b3b;
+    font-weight: 700;
+}
+
+#author{
+    padding: 5px;
+}
+
+#author:hover{
+    background-color: red;
+}
+
 section {
     display: flex;
     flex-flow: row wrap;
+    background-color: #19204E;
+}
+
+section div {
+    margin: 0 5px;
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 40rem){
+    section div {
+        margin: 0 10px;
+        margin-top: 20px;
+        background-color: aqua;
+        width: 325px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+    }
+
 }
 
 table {
     border-collapse: collapse;
-    margin: 0 5px;
-    margin-top: 10px;
     width: 300px;
+    background-color: white;
 }
 
 td, th{
     border: black solid 1px;
     padding: 5px;
+    cursor: default;
 }
 
 td:nth-child(1), td:nth-child(4){
@@ -44,6 +99,7 @@ td:nth-child(1), td:nth-child(4){
 
 td:nth-child(2), td:nth-child(3){
     width: 25px;
+    text-align: center;
 }
 
 table td:nth-child(5){

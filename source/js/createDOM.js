@@ -11,8 +11,8 @@ function createDOMFromMatch(match){
     }
 
     td[0].innerHTML = `<p>${match.team1.name}<p>`;
-    td[1].innerHTML = `<p><p>`;
-    td[2].innerHTML = `<p><p>`;
+    td[1].innerHTML = `<p>${match.team1Score}<p>`;
+    td[2].innerHTML = `<p>${match.team2Score}<p>`;
     td[3].innerHTML = `<p>${match.team2.name}<p>`;
 
     if(match.hour === 2){
@@ -80,9 +80,6 @@ function createDOMFormMatchArray(matchArray){
 
 }
 
-createDOMFormMatchArray(matchArrayGroupStage);
-
-
 /*---------------------------------INTERACTION----------------------*/
 
 //FILTER
@@ -129,3 +126,21 @@ function getSearch(){
 }
 
 search.addEventListener("click", getSearch);
+
+/*----------------------------------UPDATE FUNCTION -------------------*/
+function updateResult(team1, team2, val1, val2){
+    for(const match of matchArrayGroupStage){
+        if(match.team1.name === team1 && match.team2.name === team2){
+            match.team1Score = val1;
+            match.team2Score = val2;
+            return;
+        }
+    }
+}
+
+updateResult("Germany", "Scotland", 5, 1);
+updateResult("Hungary", "Switerland", 1, 3);
+updateResult("Spain", "Croatia", 3, 0);
+updateResult("Germany", "Scotland", 5, 1);
+
+createDOMFormMatchArray(matchArrayGroupStage);
